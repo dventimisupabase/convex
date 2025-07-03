@@ -8,3 +8,12 @@ scratch.txt
 scratch2.sql
 quoted.csv
 bq-results-20250605-180912-1749146980174.json
+build_llm_prompt.sql
+call_together_chat.sql
+devbox.json
+embed_missing_tickets.sql
+format_ticket_for_embedding.sql
+format_ticket_for_prompt.sql
+generate_embedding.sql
+normalize_message_text.sql
+search_tickets.sql
