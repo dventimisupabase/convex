@@ -1,6 +1,6 @@
 -- -*- sql-product: postgres; -*-
 
-create or replace function core.format_ticket_for_prompt(t core.ticket_with_messages)
+create or replace function core.format_ticket_for_prompt(t core.ticket)
   returns table(id bigint, formatted text)
   language sql
   set search_path = 'core', 'public'
