@@ -16,3 +16,4 @@ format_ticket_for_prompt.sql
 generate_embedding.sql
 normalize_message_text.sql
 search_tickets.sql
+.env
