@@ -1,6 +1,6 @@
 -- -- -*- sql-product: postgres; -*-
 
--- create or replace function normalize_message_text(text)
+-- create or replace function core.normalize_message_text(text)
 --   returns text
 --   language sql
 --   immutable

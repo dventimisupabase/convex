@@ -7,16 +7,34 @@ create or replace function core.format_ticket_for_prompt(t core.ticket)
 as $function$
   select
   t.id,
-  format(
-    $template$
-    SUBJECT:
-    ==========
-    %s
+  core.normalize_message_text(
+    format(
+$template$
+## TICKET SUBJECT
+%s
     
-    CONTENT:
-    ==========
-    %s
-    $template$,
-    t.document->'ticket_with_messages'->'subject',
-    t.document->'ticket_with_messages'->'content');
+## TICKET DESCRIPTION
+%s
+
+## TICKET MESSAGE HISTORY
+%s
+$template$,
+    t.document->'ticket_with_messages'->>'subject',
+    t.document->'ticket_with_messages'->>'content',
+    (
+      select
+	string_agg(item, E'\n')
+	from (
+	  select
+	    format(
+$template$
+### %s
+%s
+$template$,
+message->>'direction',
+message->>'text'
+	    ) item
+	    from (
+	      select
+		jsonb_array_elements(t.document->'ticket_with_messages'->'messages') message) t) t)));
   $function$;
