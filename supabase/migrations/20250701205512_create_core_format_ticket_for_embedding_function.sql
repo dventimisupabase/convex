@@ -4,7 +4,8 @@ create schema if not exists core;
 
 create table core.ticket (
   id bigint primary key generated always as identity,
-  document jsonb
+  document jsonb,
+  embedding vector(384)
 );
 
 create or replace function core.normalize_message_text(text)
