@@ -16,7 +16,7 @@ as $function$
 	      (
 		'POST',
 		'https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L12-v2/pipeline/feature-extraction',
-		array[http_header('Authorization', format('Bearer %s', (select decrypted_secret from vault.decrypted_secrets where name = 'HF_TOKEN')))],
+		array[http_header('Authorization', format('Bearer %s', (select decrypted_secret from vault.decrypted_secrets where name = 'hf_token')))],
 		'application/json',
 		json_build_object('inputs', (select array_agg(formatted) from (select (core.format_ticket_for_embedding(t)).formatted) t))::text))).content::jsonb) with ordinality as elem(embedding, ordinal)),
   results as (
