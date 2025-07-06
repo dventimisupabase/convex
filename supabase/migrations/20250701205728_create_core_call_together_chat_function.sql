@@ -1,4 +1,4 @@
--- -- -*- sql-product: postgres; -*-
+-- -*- sql-product: postgres; -*-
 
 -- create or replace function call_together_chat(
 --   prompt text,
@@ -11,16 +11,18 @@
 --   stable
 -- as $function$
 --   select
+--   *
 --   from
---   http((
---     'POST',
---     'https://api.together.xyz/v1/chat/completions'
---     array[http_header('Authorization', 'Bearer tgp_v1_44fuWReVyRNE8YaJk21Ch9oXbMPSuNtz6mrCHf40cKw')],
---     'application/json',
---     jsonb_build_object(
---       'model', 'deepseek-ai/DeepSeek-V3',
---       'messages', jsonb_build_array(
--- 	'role', 'user',
--- 	'content', prompt)),
--- 	'stream', false)::text)
+--   http(
+--     (
+--       'POST',
+--       'https://api.together.xyz/v1/chat/completions',
+--       array[http_header('Authorization', 'Bearer foo')],
+--       'application/json',
+--       jsonb_build_object(
+-- 	'model', 'deepseek-ai/DeepSeek-V3',
+-- 	'messages', jsonb_build_array(
+-- 	  'role', 'user',
+-- 	  'content', prompt)),
+-- 	  'stream', false)::text)
 -- $function$;
