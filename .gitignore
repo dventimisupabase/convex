@@ -17,3 +17,4 @@ generate_embedding.sql
 normalize_message_text.sql
 search_tickets.sql
 .env
+tickets.csv
