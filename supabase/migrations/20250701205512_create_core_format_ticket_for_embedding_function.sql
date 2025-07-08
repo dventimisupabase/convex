@@ -8,6 +8,8 @@ create table core.ticket (
   embedding vector(384)
 );
 
+create index on core.ticket using hnsw (embedding vector_cosine_ops);
+
 create or replace function core.normalize_message_text(text)
   returns text
   language sql
