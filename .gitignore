@@ -18,3 +18,4 @@ normalize_message_text.sql
 search_tickets.sql
 .env
 tickets.csv
+bq-results-20250605-180912-1749146980174.jsonl
