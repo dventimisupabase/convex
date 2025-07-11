@@ -7,4 +7,3 @@ create extension if not exists pgmq;
 create extension if not exists tsm_system_rows schema extensions;
 create extension if not exists vector schema extensions;
 
-

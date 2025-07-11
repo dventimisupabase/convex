@@ -2,6 +2,8 @@
 
 create schema if not exists core;
 
+create type core.message_type as enum ('INBOUND', 'OUTBOUND', 'COMMENT');
+
 create table core.ticket (
   id bigint primary key generated always as identity,
   document jsonb,

@@ -1,6 +1,6 @@
 -- -*- sql-product: postgres; -*-
 
-select core.call_together_chat('What is the capital of France?');
+-- select core.call_together_chat('What is the capital of France?');
 
 create or replace function core.call_together_chat(
   prompt text,
