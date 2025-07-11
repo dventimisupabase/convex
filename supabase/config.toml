@@ -45,6 +45,7 @@ max_client_conn = 100
 [db.vault]
 hf_token = "env(HF_TOKEN)"
 together_api_key = "env(TOGETHER_API_KEY)"
+front_api_key = "env(FRONT_API_KEY)"
 
 [db.migrations]
 # If disabled, migrations will be skipped during a db push or reset.
