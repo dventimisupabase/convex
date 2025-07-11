@@ -16,7 +16,7 @@ as $sql$
       jsonb_build_object(
 	'type', 'MESSAGE',
 	'subject', subject,
-	'direction', 'INCOMING',
+	'direction', direction,
 	'created_at', posted_at,
 	'text', body) message
       from (
