@@ -50,6 +50,7 @@ $template$,
 create or replace function core.embed_missing_tickets()
   returns void
   language sql
+  security definer
   volatile
 as $$
   with

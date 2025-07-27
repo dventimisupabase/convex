@@ -3,6 +3,7 @@
 create or replace function core.search_tickets(t core.ticket, k integer default 10)
   returns setof core.ticket
   language sql
+  security definer
 as $function$
   with
   output as (

@@ -3,6 +3,7 @@
 create or replace function core.fetch_front_ticket(front_id text)
   returns setof core.ticket
   language sql
+  security definer
 as $sql$
   select
   1 id,

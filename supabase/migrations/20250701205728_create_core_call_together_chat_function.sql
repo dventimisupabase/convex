@@ -8,6 +8,7 @@ create or replace function core.call_together_chat(
 )
   returns text
   language sql
+  security definer
   stable
 as $function$
   select
